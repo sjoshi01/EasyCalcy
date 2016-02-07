@@ -72,23 +72,9 @@ class ViewController: UIViewController
         self.calculator.operatorEntered(sender.titleLabel!.text!)
     }
     
-    func addAnimation(clickButton: UIButton)
-    {
-        UIView.animateWithDuration(0.01 ,
-            animations: {
-                clickButton.transform = CGAffineTransformMakeScale(0.9, 0.9)
-            },
-            completion: { finish in
-                UIView.animateWithDuration(0.01){
-                    clickButton.transform = CGAffineTransformIdentity
-                }
-        })
-
-    }
-    
     func onButtonClickActivities(sender: UIButton)
     {
-        self.addAnimation(sender)
+        AnimationHelper.addAnimation(sender)
         SoundHelper.play(1104)
     }
     
