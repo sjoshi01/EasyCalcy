@@ -49,12 +49,6 @@ class ViewController: UIViewController
         calculator.resetAll()
     }
    
-    @IBAction func plusMinusOperator(sender: UIButton)
-    {
-        //self.onButtonClickActivities(sender)
-        //calculator.negationOperator(sender)
-    }
-    
     @IBAction func dotPressed(sender: UIButton)
     {
         self.onButtonClickActivities(sender)
