@@ -17,6 +17,7 @@
 		50CC1A711C60223700B2411A /* EasyCalcyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC1A701C60223700B2411A /* EasyCalcyTests.swift */; };
 		50CC1A7C1C60223700B2411A /* EasyCalcyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC1A7B1C60223700B2411A /* EasyCalcyUITests.swift */; };
 		50F7B2681C66D227004BC389 /* SoundHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F7B2671C66D227004BC389 /* SoundHelper.swift */; };
+		50F7B26C1C67C9F2004BC389 /* AnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F7B26B1C67C9F2004BC389 /* AnimationHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		50CC1A7B1C60223700B2411A /* EasyCalcyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyCalcyUITests.swift; sourceTree = "<group>"; };
 		50CC1A7D1C60223700B2411A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50F7B2671C66D227004BC389 /* SoundHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundHelper.swift; sourceTree = "<group>"; };
+		50F7B26B1C67C9F2004BC389 /* AnimationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				50F7B2671C66D227004BC389 /* SoundHelper.swift */,
+				50F7B26B1C67C9F2004BC389 /* AnimationHelper.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 			files = (
 				50CC1A5E1C60223700B2411A /* ViewController.swift in Sources */,
 				50F7B2681C66D227004BC389 /* SoundHelper.swift in Sources */,
+				50F7B26C1C67C9F2004BC389 /* AnimationHelper.swift in Sources */,
 				50CC1A5C1C60223700B2411A /* AppDelegate.swift in Sources */,
 				506B39831C61AF89007EED87 /* Calculator.swift in Sources */,
 			);
