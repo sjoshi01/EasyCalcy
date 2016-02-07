@@ -51,8 +51,8 @@ class ViewController: UIViewController
    
     @IBAction func plusMinusOperator(sender: UIButton)
     {
-        self.onButtonClickActivities(sender)
-        calculator.negationOperator(sender)
+        //self.onButtonClickActivities(sender)
+        //calculator.negationOperator(sender)
     }
     
     @IBAction func dotPressed(sender: UIButton)
@@ -60,6 +60,7 @@ class ViewController: UIViewController
         self.onButtonClickActivities(sender)
         calculator.dotEntered(sender)
     }
+    
     @IBAction func digitPressed(sender: UIButton)
     {
         self.onButtonClickActivities(sender)
@@ -70,6 +71,11 @@ class ViewController: UIViewController
     {
         self.onButtonClickActivities(sender)
         self.calculator.operatorEntered(sender.titleLabel!.text!)
+    }
+    
+    @IBAction func unaryOperatorPressed(sender: UIButton)
+    {
+        self.calculator.unaryOperatorEntered(sender.titleLabel!.text!)
     }
     
     func addAnimation(clickButton: UIButton)

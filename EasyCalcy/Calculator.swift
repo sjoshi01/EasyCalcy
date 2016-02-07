@@ -97,13 +97,6 @@ class Calculator
             self.performOperation(currentOperator)
             
         }
-        if op == "%" && self.operands.count > 0
-        {
-            self.operands.append("100")
-            self.operators.append(op)
-            doCalculation()
-        }
-
         currentOperand = ""
     }
     
@@ -152,8 +145,6 @@ class Calculator
                 case "-" :   result = subtract(operand1!, operand2: operand2!)
                              self.operands.append(String(result))
                 case "/" :   result = try divide(operand1!, operand2: operand2!)
-                             self.operands.append(String(result))
-                case "%" :   result = try divide(operand1!, operand2: operand2!)
                              self.operands.append(String(result))
                 default: break
             }
@@ -230,32 +221,48 @@ class Calculator
 
     }
     
-    func negationOperator(neg: UIButton)
+    func unaryOperatorEntered(title: String)
     {
+        var operandNeeded: String = ""
         if !currentOperand.isEmpty
         {
-            currentOperand = String(Double(currentOperand)! * -1 )
-            if !isFloat
-            {
-                self.currentOperand = self.currentOperand.componentsSeparatedByString(".")[0]
-            }
-            self.displayValue = Double (currentOperand)!
-            return
+            operandNeeded = currentOperand
         }
-        if currentOperand.isEmpty && self.operands.count > 0
+        else if currentOperand.isEmpty && self.operands.count > 0
         {
-            var negation = self.operands.removeLast()
-            negation = String(Double(negation)! * -1 )
-            if !negation.containsString(".")
-            {
-                negation = negation.componentsSeparatedByString(".")[0]
-            }
-            self.displayValue = Double (negation)!
-            self.operands.append(negation)
-            return
-
+            operandNeeded = self.operands.removeLast()
         }
+        else
+        {
+            operandNeeded = "0"
+        }
+        operandNeeded = performUnaryOperation(title, operandtoUse: operandNeeded)
+        self.displayValue = Double (operandNeeded)!
+        self.currentOperand = operandNeeded
+        return
+        
     }
+
+    func performUnaryOperation(unaryOperator: String, var operandtoUse: String) -> String
+     {
+        switch unaryOperator
+        {
+          case "+/-" : operandtoUse = String(Double(operandtoUse)! * -1 )
+                       if !isFloat && !operandtoUse.containsString(".")
+                        {
+                             operandtoUse = operandtoUse.componentsSeparatedByString(".")[0]
+                        }
+        case "%" :  var operand2 : String = "1"
+                    if self.operands.count > 0
+                    {
+                         operand2 = self.operands.last!
+                    }
+                        operandtoUse = String(Double(operand2)! * (Double(operandtoUse)!/100))
+            
+          default: break
+        }
+        return operandtoUse
+     }
 
 }
 

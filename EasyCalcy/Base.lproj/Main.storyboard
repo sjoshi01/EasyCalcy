@@ -91,7 +91,7 @@
                                                     <color key="titleShadowColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="plusMinusOperator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eWO-mP-CFB"/>
+                                                    <action selector="unaryOperatorPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ysx-zp-p0s"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rf5-Xy-5Zo">
@@ -103,7 +103,7 @@
                                                     <color key="titleShadowColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="operatorPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="201-4Z-Jrx"/>
+                                                    <action selector="unaryOperatorPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B6f-k5-DMC"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZw-Fw-kc0">
@@ -314,9 +314,6 @@
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="operatorPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JZt-2H-3cC"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0O0-j8-Fs9">
                                                 <rect key="frame" x="288" y="0.0" width="95" height="82"/>
