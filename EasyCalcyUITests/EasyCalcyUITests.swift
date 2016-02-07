@@ -105,13 +105,17 @@ class EasyCalcyUITests: XCTestCase {
         app.buttons["x"].tap()
         button2.tap()
         app.buttons["-"].tap()
+        XCTAssert(app.staticTexts[" 12.08"].exists)
+        
         app.buttons["3"].tap()
         app.buttons["/"].tap()
         button4.tap()
         
         let button5 = app.buttons["="]
         button5.tap()
+        XCTAssert(app.staticTexts[" 10.58"].exists)
         app.buttons["+/-"].tap()
+        XCTAssert(app.staticTexts[" -10.58"].exists)
         button3.tap()
         app.buttons["5"].tap()
         button5.tap()
@@ -121,16 +125,7 @@ class EasyCalcyUITests: XCTestCase {
     func testPercentSequence()
     {
         
-        let app = XCUIApplication()
-        app.buttons["4"].tap()
         
-        let button = app.buttons["+"]
-        button.tap()
-        app.buttons["9"].tap()
-        button.tap()
-        app.buttons["6"].tap()
-        app.buttons["%"].tap()
-        app.buttons["C"].tap()
         
     }
     

@@ -49,17 +49,12 @@ class ViewController: UIViewController
         calculator.resetAll()
     }
    
-    @IBAction func plusMinusOperator(sender: UIButton)
-    {
-        self.onButtonClickActivities(sender)
-        calculator.negationOperator(sender)
-    }
-    
     @IBAction func dotPressed(sender: UIButton)
     {
         self.onButtonClickActivities(sender)
         calculator.dotEntered(sender)
     }
+    
     @IBAction func digitPressed(sender: UIButton)
     {
         self.onButtonClickActivities(sender)
@@ -70,6 +65,12 @@ class ViewController: UIViewController
     {
         self.onButtonClickActivities(sender)
         self.calculator.operatorEntered(sender.titleLabel!.text!)
+    }
+    
+    @IBAction func unaryOperatorPressed(sender: UIButton)
+    {
+        self.onButtonClickActivities(sender)
+        self.calculator.unaryOperatorEntered(sender.titleLabel!.text!)
     }
     
     func onButtonClickActivities(sender: UIButton)
