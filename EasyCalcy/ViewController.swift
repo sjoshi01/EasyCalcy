@@ -13,7 +13,6 @@ class ViewController: UIViewController
 {
     
     var calculator: Calculator = Calculator()
-    @IBOutlet var historyLabel: UILabel!
 
     @IBOutlet var displayResult: UILabel!
     var player : AVAudioPlayer = AVAudioPlayer()
@@ -21,7 +20,7 @@ class ViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        self.calculator.setLabel(displayResult, historyLabel: historyLabel)
+        self.calculator.setLabel(displayResult)
     }
     
     override func canBecomeFirstResponder() -> Bool

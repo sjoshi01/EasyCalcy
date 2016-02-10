@@ -349,7 +349,6 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="displayResult" destination="F2F-Zt-Wpc" id="B1T-Ie-JBp"/>
-                        <outlet property="historyLabel" destination="gH8-pg-kja" id="eJb-3D-PEV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

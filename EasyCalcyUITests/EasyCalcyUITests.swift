@@ -122,12 +122,4 @@ class EasyCalcyUITests: XCTestCase {
         XCTAssert(app.staticTexts[" -5.58"].exists)
     }
     
-    func testPercentSequence()
-    {
-        
-        
-        
-    }
-    
-    
 }

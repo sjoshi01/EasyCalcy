@@ -17,9 +17,8 @@ class Calculator
     var operands = [String]()
     var operators = [String]()
     var resultLabel : UILabel = UILabel()
-    var historyLabel : UILabel = UILabel()
     var isFloat: Bool = false
-    
+
 
     var displayValue: Double {
         get {
@@ -33,10 +32,9 @@ class Calculator
         }
     }
     
-    func setLabel(resultField: UILabel, historyLabel: UILabel)
+    func setLabel(resultField: UILabel)
     {
         self.resultLabel = resultField
-        self.historyLabel = historyLabel
     }
     
     func resetAll()
@@ -53,7 +51,6 @@ class Calculator
     {
         currentOperand.appendContentsOf(digit)
         self.pushOperator()
-        
         displayValue = Double(self.currentOperand)!
     }
     
@@ -89,7 +86,7 @@ class Calculator
         
         currentOperand = ""
     }
-
+   
     func performOperation(currentOperator: String)
     {
         let currentPriority = self.operatorPriority[currentOperator]
@@ -234,7 +231,7 @@ class Calculator
     }
 
     func performUnaryOperation(unaryOperator: String, var operandtoUse: String) -> String
-     {
+    {
         switch unaryOperator
         {
           case "+/-" : operandtoUse = String(Double(operandtoUse)! * -1 )
@@ -253,8 +250,8 @@ class Calculator
         }
         return operandtoUse
      }
-
-}
+    
+   }
 
 enum CalculatorErros: ErrorType {
     case Empty
