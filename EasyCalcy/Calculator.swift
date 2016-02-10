@@ -3,7 +3,7 @@
 //  EasyCalcy
 //
 //  Created by Sayali Joshi on 2/2/16.
-//  Copyright © 2016 Sayali. All rights reserved.
+//  Copyright © 2016 Sayali Joshi. All rights reserved.
 //
 
 import Foundation
@@ -19,6 +19,7 @@ class Calculator
     var resultLabel : UILabel = UILabel()
     var historyLabel : UILabel = UILabel()
     var isFloat: Bool = false
+    
 
     var displayValue: Double {
         get {
@@ -28,21 +29,10 @@ class Calculator
         set {
             
             self.resultLabel.text  = " "+"\(newValue)"
+            
         }
     }
     
-    var history: String {
-        get {
-            
-            return self.historyLabel.text!
-        }
-        set {
-            
-            self.historyLabel.text  = "\(newValue)"
-            
-        }
-    }
-  
     func setLabel(resultField: UILabel, historyLabel: UILabel)
     {
         self.resultLabel = resultField
@@ -56,7 +46,6 @@ class Calculator
         self.operators.removeAll()
         self.currentOperator = ""
         self.currentOperand = ""
-        self.history = ""
         isFloat = false
     }
     
@@ -66,12 +55,12 @@ class Calculator
         self.pushOperator()
         
         displayValue = Double(self.currentOperand)!
-        
     }
     
     func pushOperator()
     {
-        if !self.currentOperator.isEmpty
+        
+        if !self.currentOperator.isEmpty  && self.currentOperator != "="
         {
             self.operators.append(self.currentOperator)
             self.currentOperator = ""
@@ -97,9 +86,10 @@ class Calculator
             self.performOperation(currentOperator)
             
         }
+        
         currentOperand = ""
     }
-    
+
     func performOperation(currentOperator: String)
     {
         let currentPriority = self.operatorPriority[currentOperator]
@@ -115,12 +105,10 @@ class Calculator
         }
         if self.currentOperator.isEmpty
         {
-            self.currentOperator = ""
             if self.operands.count > 0
             {
-              self.operands.removeLast()
+                self.operands.removeLast()
             }
-            self.history = ""
             self.isFloat = false
         }
         
@@ -146,6 +134,7 @@ class Calculator
                              self.operands.append(String(result))
                 case "/" :   result = try divide(operand1!, operand2: operand2!)
                              self.operands.append(String(result))
+                case "=" :   break
                 default: break
             }
             
@@ -207,7 +196,7 @@ class Calculator
         return pow(operand1,operand2)
     }
     
-    func dotEntered(dot: UIButton)
+    func dotEntered(dot: String)
     {
         if !self.isFloat
         {
@@ -223,6 +212,7 @@ class Calculator
     
     func unaryOperatorEntered(title: String)
     {
+        
         var operandNeeded: String = ""
         if !currentOperand.isEmpty
         {
@@ -252,7 +242,7 @@ class Calculator
                         {
                              operandtoUse = operandtoUse.componentsSeparatedByString(".")[0]
                         }
-        case "%" :  var operand2 : String = "1"
+          case "%" :  var operand2 : String = "1"
                     if self.operands.count > 0
                     {
                          operand2 = self.operands.last!

@@ -3,7 +3,7 @@
 //  EasyCalcy
 //
 //  Created by Sayali Joshi on 2/1/16.
-//  Copyright © 2016 Sayali. All rights reserved.
+//  Copyright © 2016 Sayali Joshi. All rights reserved.
 //
 
 import XCTest
@@ -218,6 +218,64 @@ class CalculatorTests: XCTestCase {
         
         //Assert
         XCTAssertTrue(calculator.displayValue == 54)
+    }
+    
+    func testMultipleFloatPointEntry()
+    {
+        //Arrange
+        calculator.dotEntered(".")
+        calculator.digitEntered("2")
+        calculator.dotEntered(".")
+        calculator.digitEntered("5")
+        
+        //Assert
+        XCTAssertTrue(calculator.resultLabel.text == " 0.25")
+    }
+    
+    func testMultipleEqualToOperatorEntry()
+    {
+        //Arrange and Act
+        calculator.digitEntered("34")
+        calculator.operatorEntered("+")
+        calculator.digitEntered("6")
+        calculator.operatorEntered("=")
+        
+        //Assert
+        XCTAssert(calculator.resultLabel.text == " 40.0")
+        
+        calculator.operatorEntered("=")
+        XCTAssert(calculator.resultLabel.text == " 40.0")
+        
+        calculator.operatorEntered("x")
+        calculator.digitEntered("6")
+        calculator.operatorEntered("=")
+        XCTAssert(calculator.resultLabel.text == " 240.0")
+        
+    }
+    
+    func testDigitAfterEqualtoOperator()
+    {
+        //Arrange 
+        calculator.digitEntered("144")
+        calculator.operatorEntered("+")
+        calculator.digitEntered("62")
+        
+        //Act
+        calculator.operatorEntered("=")
+        
+        //Assert
+        XCTAssert(calculator.resultLabel.text == " 206.0")
+        
+        //Arrange
+        calculator.digitEntered("248")
+        calculator.operatorEntered("/")
+        calculator.digitEntered("4")
+        
+        //Act
+        calculator.operatorEntered("=")
+        
+        //Assert
+        XCTAssert(calculator.resultLabel.text == " 62.0")
     }
     
     

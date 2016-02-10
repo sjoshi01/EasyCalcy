@@ -3,7 +3,7 @@
 //  EasyCalcy
 //
 //  Created by Sayali Joshi on 2/1/16.
-//  Copyright © 2016 Sayali. All rights reserved.
+//  Copyright © 2016 Sayali Joshi. All rights reserved.
 //
 
 import UIKit
@@ -52,7 +52,7 @@ class ViewController: UIViewController
     @IBAction func dotPressed(sender: UIButton)
     {
         self.onButtonClickActivities(sender)
-        calculator.dotEntered(sender)
+        calculator.dotEntered(sender.titleLabel!.text!)
     }
     
     @IBAction func digitPressed(sender: UIButton)

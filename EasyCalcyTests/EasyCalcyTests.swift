@@ -2,7 +2,7 @@
 //  EasyCalcyTests.swift
 //  EasyCalcyTests
 //
-//  Copyright © 2016 Sayali. All rights reserved.
+//  Copyright © 2016 Sayali Joshi. All rights reserved.
 //
 
 import XCTest
