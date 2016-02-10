@@ -215,6 +215,12 @@ class Calculator
         {
             operandNeeded = currentOperand
         }
+        else if self.currentOperand.isEmpty && !self.currentOperator.isEmpty && self.operators.count == 0 && self.currentOperator != "="
+        {
+            
+            operandNeeded = "0"
+            
+        }
         else if currentOperand.isEmpty && self.operands.count > 0
         {
             operandNeeded = self.operands.removeLast()
@@ -234,11 +240,16 @@ class Calculator
     {
         switch unaryOperator
         {
-          case "+/-" : operandtoUse = String(Double(operandtoUse)! * -1 )
-                       if !isFloat && !operandtoUse.containsString(".")
+          case "+/-" : if !isFloat && !operandtoUse.containsString(".")
+                       {
+                            operandtoUse = String(Double(operandtoUse)! * -1 )
+                            operandtoUse = operandtoUse.componentsSeparatedByString(".")[0]
+                       }
+                       else
                         {
-                             operandtoUse = operandtoUse.componentsSeparatedByString(".")[0]
+                           operandtoUse = String(Double(operandtoUse)! * -1 )
                         }
+            
           case "%" :  var operand2 : String = "1"
                     if self.operands.count > 0
                     {

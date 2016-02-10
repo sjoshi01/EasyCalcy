@@ -198,6 +198,19 @@ class CalculatorTests: XCTestCase {
         
     }
     
+    func testNegationOperatorAfterOperator()
+    {
+        //Arrange
+        calculator.digitEntered("8")
+        calculator.operatorEntered("+")
+        
+        //Act
+        calculator.unaryOperatorEntered("+/-")
+        
+        //Assert
+        XCTAssert(calculator.resultLabel.text == " -0.0")
+    }
+    
     func testOperationSequenceWithDivZero()
     {
         //Arrange and Act
